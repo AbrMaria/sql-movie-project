@@ -1,0 +1,59 @@
+Описание БД
+
+База данных sql-movie-project состоит из следующих таблиц:
+
+
+1. movies_metadata.csv (24 columns) - Contains Cast and Crew Information for all movies.
+
+adult (boolean)
+belongs_to_collection (string)
+budget (string)
+genres (string)
+homepage (string)
+id (numeric) - PRIMARY KEY
+imdb_id (string)
+original_language (string)
+original_title (string)
+overview (string)
+popularity (numeric)
+poster_path (string)
+production_companies (string)
+production_countries (string)
+release_date (date)
+revenue (numeric)
+runtime (numeric)
+spoken_languages (string)
+status (string)
+tagline (string)
+title (string)
+video (boolean)
+vote_average (numeric)
+vote_count (numeric)
+
+
+2. links.csv (45.8k x 3) - Contains IMDB and TMDB IDs of all movies features in the ratings.csv file (About 45,000 movies).
+
+movieId (numeric) - PRIMARY KEY
+imdbId (numeric)
+tmdbId (date)
+
+
+3. ratings.csv (26.0m x 4) - Contains Cast and Crew Information for all movies in the movies_metadata.csv file.
+
+userId (numeric)
+movieId (numeric) - PRIMARY KEY
+rating (numeric)
+timestamp (numeric)
+
+
+4. credits.csv (45.5k x 3) - Contains Cast and Crew Information for all movies in the movies_metadata.csv file.
+
+cast (string)
+crew (string)
+id - PRIMARY KEY
+
+
+5. keywords.csv (46.4k x 2) - Contains Cast and Crew Information for all movies in the movies_metadata.csv file.
+
+id - PRIMARY KEY
+keywords - (string)
