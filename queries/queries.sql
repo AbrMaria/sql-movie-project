@@ -18,23 +18,6 @@ SELECT COUNT(movieid) FROM ratings WHERE rating IS NULL;
 -- 5 Посчитать сколько раз ставился каждый тип оценки
 SELECT rating, COUNT(*) FROM ratings GROUP BY rating HAVING COUNT(*) > 10 LIMIT 10;
 
---- Вывести список id фильмов с наибольшим количеством оценок
-SELECT movieid, COUNT(num_public) as public_activity 
-FROM Department JOIN Employee on Department.id = Employee.department_id 
-GROUP BY movieid 
-ORDER BY public_activity DESC
-LIMIT 10;
-
-
-
---- Вывести список департамент id с максимальным количеством публикаций
-SELECT Department.id, SUM(num_public) as public_activity 
-FROM Department JOIN Employee on Department.id = Employee.department_id 
-GROUP BY Department.id 
-ORDER BY public_activity DESC
-LIMIT 3;
-
-
 -- 6 Проверить наличие нулей в столбце raiting
 SELECT * FROM ratings ORDER BY rating ASC LIMIT 10;
 
